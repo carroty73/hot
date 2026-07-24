@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Hamdeok Beach Stay Jeju (sample)",
+    "lat": 33.542,
+    "lon": 126.6675,
+    "address": "474 Johamhaean-ro, Jocheon-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample ocean-view accommodation",
+    "category": "Stay",
+    "status": "Visited",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Hotel",
+      "Ocean view"
+    ],
+    "no": 15,
+    "url": "https://app.notion.com/p/Hamdeok-Beach-Stay-Jeju-sample-747f99a4bb2383a08daf010c5e6c68ee",
+    "coord_source": "place",
+    "place_label": "Hamdeok Beach Stay Jeju"
+  },
+  {
+    "name": "The Four Grace Hotel & Resort (sample)",
+    "lat": 33.459,
+    "lon": 126.934,
+    "address": "2670 Haematiihaean-ro, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample solo / budget-friendly stay",
+    "category": "Stay",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Guesthouse",
+      "Budget-friendly"
+    ],
+    "no": 14,
+    "url": "https://app.notion.com/p/The-Four-Grace-Hotel-Resort-sample-9c2f99a4bb23832ba29681becd79e9c1",
+    "coord_source": "place",
+    "place_label": "The Four Grace Hotel & Resort"
+  },
+  {
+    "name": "Jeju Shinhwa World Marriott (sample)",
+    "lat": 33.3047,
+    "lon": 126.3165,
+    "address": "38 Sinhwayeoksa-ro 304beon-gil, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample stay for family or couple trips",
+    "category": "Stay",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Hotel",
+      "Family trip"
+    ],
+    "no": 13,
+    "url": "https://app.notion.com/p/Jeju-Shinhwa-World-Marriott-sample-497f99a4bb2383328b7781625d4caf62",
+    "coord_source": "place",
+    "place_label": "Jeju Shinhwa World Marriott"
+  },
+  {
+    "name": "Saryeoni Forest Path",
+    "lat": 33.3865,
+    "lon": 126.6265,
+    "address": "San 137-1 Gyorae-ri, Jocheon-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample quiet walking trail",
+    "category": "Rest",
+    "status": "Wishlist",
+    "rating": "⭐⭐",
+    "tags": [
+      "Walk",
+      "Forest trail"
+    ],
+    "no": 12,
+    "url": "https://app.notion.com/p/Saryeoni-Forest-Path-8eff99a4bb2382e9933781ea95d716cc",
+    "coord_source": "place",
+    "place_label": "Saryeoni Forest Path"
+  },
+  {
+    "name": "Bijarim Forest",
+    "lat": 33.4905,
+    "lon": 126.8097,
+    "address": "55 Bijasup-gil, Gujwa-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample forest rest stop",
+    "category": "Rest",
+    "status": "Visited",
+    "rating": "⭐⭐⭐⭐",
+    "tags": [
+      "Walk",
+      "Forest"
+    ],
+    "no": 11,
+    "url": "https://app.notion.com/p/Bijarim-Forest-77af99a4bb2382cca96881bb4a18f003",
+    "coord_source": "place",
+    "place_label": "Bijarim Forest"
+  },
+  {
+    "name": "Handam Coastal Trail",
+    "lat": 33.4608,
+    "lon": 126.3106,
+    "address": "1359 Gwakji-ri, Aewol-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample coastal walking course",
+    "category": "Rest",
+    "status": "Visited",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Walk",
+      "Ocean"
+    ],
+    "no": 10,
+    "url": "https://app.notion.com/p/Handam-Coastal-Trail-c4ef99a4bb2383bea040813f86069396",
+    "coord_source": "place",
+    "place_label": "Handam Coastal Trail"
+  },
+  {
+    "name": "Noeul (sample)",
+    "lat": 33.4635,
+    "lon": 126.32,
+    "address": "654 Aewolhaean-ro, Aewol-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample ocean-view cafe for a break",
+    "category": "Drink",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Cafe",
+      "Ocean view"
+    ],
+    "no": 9,
+    "url": "https://app.notion.com/p/Noeul-sample-b0df99a4bb238260a9888144e821ea58",
+    "coord_source": "place",
+    "place_label": "Noeul"
+  },
+  {
+    "name": "Azulejo (sample)",
+    "lat": 33.363,
+    "lon": 126.841,
+    "address": "59 Sinpunghadong-ro 19beon-gil, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample bakery cafe for bread and coffee",
+    "category": "Drink",
+    "status": "Visited",
+    "rating": "⭐⭐⭐⭐",
+    "tags": [
+      "Cafe",
+      "Bakery"
+    ],
+    "no": 8,
+    "url": "https://app.notion.com/p/Azulejo-sample-c11f99a4bb238246a4d50125b2bc1f60",
+    "coord_source": "place",
+    "place_label": "Azulejo"
+  },
+  {
+    "name": "Cafe Guhalgu (sample)",
+    "lat": 33.556,
+    "lon": 126.7955,
+    "address": "48-2 Woljeong 5-gil, Gujwa-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample Jeju-style dessert cafe",
+    "category": "Drink",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐⭐",
+    "tags": [
+      "Cafe",
+      "Dessert"
+    ],
+    "no": 7,
+    "url": "https://app.notion.com/p/Cafe-Guhalgu-sample-0edf99a4bb2382cf83fb81970fe11b21",
+    "coord_source": "place",
+    "place_label": "Cafe Guhalgu"
+  },
+  {
+    "name": "Gohalmangne (sample)",
+    "lat": 33.229,
+    "lon": 126.304,
+    "address": "159-1 Sagyenam-ro, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample one-meal stop on a Jeju trip",
+    "category": "Eat",
+    "status": "Visited",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Korean food",
+      "Noodles"
+    ],
+    "no": 6,
+    "url": "https://app.notion.com/p/Gohalmangne-sample-ea4f99a4bb238219a00801130f8358e2",
+    "coord_source": "place",
+    "place_label": "Gohalmangne"
+  },
+  {
+    "name": "Myeonggyeong Restaurant (sample)",
+    "lat": 33.2405,
+    "lon": 126.335,
+    "address": "88 Hwasun-ro, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample dinner spot for a signature local meal",
+    "category": "Eat",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Korean food",
+      "Meat"
+    ],
+    "no": 5,
+    "url": "https://app.notion.com/p/Myeonggyeong-Restaurant-sample-f0bf99a4bb238344892d818ec0f5301f",
+    "coord_source": "place",
+    "place_label": "Myeonggyeong Restaurant"
+  },
+  {
+    "name": "Haksik Restaurant (sample)",
+    "lat": 33.512,
+    "lon": 126.518,
+    "address": "3 Seomun-ro 6-gil, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample seaside restaurant",
+    "category": "Eat",
+    "status": "Visited",
+    "rating": "⭐⭐⭐",
+    "tags": [
+      "Seafood",
+      "Korean food"
+    ],
+    "no": 4,
+    "url": "https://app.notion.com/p/Haksik-Restaurant-sample-7baf99a4bb238291b12d81f8ed80ba6b",
+    "coord_source": "place",
+    "place_label": "Haksik Restaurant"
+  },
+  {
+    "name": "Cheonjiyeon Falls",
+    "lat": 33.2467,
+    "lon": 126.5544,
+    "address": "2565 Seohong-dong, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Sample waterfall / nature attraction",
+    "category": "See",
+    "status": "Wishlist",
+    "rating": "⭐⭐⭐⭐",
+    "tags": [
+      "Nature",
+      "Waterfall"
+    ],
+    "no": 3,
+    "url": "https://app.notion.com/p/Cheonjiyeon-Falls-ccdf99a4bb2383249a7e81b8833938e9",
+    "coord_source": "place",
+    "place_label": "Cheonjiyeon Falls"
+  },
+  {
+    "name": "Hamdeok Beach",
+    "lat": 33.5434,
+    "lon": 126.6694,
+    "address": "525 Johamhaean-ro, Jocheon-eup, Jeju-si, Jeju-do, South Korea",
+    "memo": "Sample beach scenery spot",
+    "category": "See",
+    "status": "Visited",
+    "rating": "⭐⭐⭐⭐⭐",
+    "tags": [
+      "Beach",
+      "Photo"
+    ],
+    "no": 2,
+    "url": "https://app.notion.com/p/Hamdeok-Beach-fa0f99a4bb2383eb929a01c58dc12693",
+    "coord_source": "place",
+    "place_label": "Hamdeok Beach"
+  },
+  {
+    "name": "Seongsan Ilchulbong",
+    "lat": 33.4581,
+    "lon": 126.9425,
+    "address": "1 Seongsan-ri, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea",
+    "memo": "Iconic Jeju sunrise viewpoint",
+    "category": "See",
+    "status": "Visited",
+    "rating": "⭐⭐⭐⭐",
+    "tags": [
+      "Nature",
+      "Viewpoint"
+    ],
+    "no": 1,
+    "url": "https://app.notion.com/p/Seongsan-Ilchulbong-78af99a4bb23823c98d1815c2d54a7db",
+    "coord_source": "place",
+    "place_label": "Seongsan Ilchulbong"
+  }
+]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>당근 핫플 지도</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            background-color: #4B3621;
+            font-family: 'Pretendard', sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            opacity: 0;
+            animation: fadeInOut 2.8s ease-in-out forwards;
+        }
+        img {
+            width: 30%;
+            max-width: 150px;
+            min-width: 80px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: clamp(1.2rem, 5vw, 2rem);
+            font-weight: 300;
+            color: #FFFFFF;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+            font-weight: 300;
+            color: #F5E6D3;
+            margin: 8px 0 16px;
+        }
+        h3 {
+            font-size: clamp(0.8rem, 3vw, 1rem);
+            color: #D2B48C;
+            font-weight: 200;
+            margin: 0;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "/hot/";
+        }, 3000);
+    </script>
+
+  <!-- 카톡/SNS 미리보기 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="당근 핫플 지도">
+  <meta property="og:description" content="핫플을 지도로 모아봤어요.">
+  <meta property="og:url" content="http://221.138.105.134:8000/">
+  <meta property="og:image" content="http://221.138.105.134:8000/rsc/img/hot-og.png">
+
+  <!-- 카톡 호환용 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://221.138.105.134:8000/rsc/img/hot-og.png">    
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='coffee.png') }}" alt="로딩중">
+        <!--
+        <h1>야, 어디 괜찮은 식당 없냐?</h1>
+        <h2>지도로 바로 보여줄께</h2>
+        -->
+
+        <h1>Hey, know any good cafes?</h1>
+        <h2>I'll show on the map.</h2>        
+        <h3>carroty.com/hot</h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[Unit]
+Description=당근이 핫플 웹서버
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/oyee/webapps/hot/app.py
+WorkingDirectory=/home/oyee/webapps/hot
+User=oyee
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

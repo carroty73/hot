@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9dd4719f35958f112750ca9e0e3e5dca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9dd4719f35958f112750ca9e0e3e5dca" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9dd4719f35958f112750ca9e0e3e5dca = L.map(
+                "map_9dd4719f35958f112750ca9e0e3e5dca",
+                {
+                    center: [37.7381, 127.0339],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bd490b0b35ef970718608869eea7f533 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bd490b0b35ef970718608869eea7f533.addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var marker_098beb43e19a0c0b02eb5aee615c09ba = L.marker(
+                [37.7456401, 127.0968178],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_36707d4bf3b3888347f60e0df69dbfbf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deef657f99b97f324515670cc0e3b5f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abcf425d4a8a2c3f061d387040de3e1e = $(`<div id="html_abcf425d4a8a2c3f061d387040de3e1e" style="width: 100.0%; height: 100.0%;">왕빈자삼파전 (민락동점)</div>`)[0];
+                popup_deef657f99b97f324515670cc0e3b5f7.setContent(html_abcf425d4a8a2c3f061d387040de3e1e);
+            
+        
+
+        marker_098beb43e19a0c0b02eb5aee615c09ba.bindPopup(popup_deef657f99b97f324515670cc0e3b5f7)
+        ;
+
+        
+    
+    
+                marker_098beb43e19a0c0b02eb5aee615c09ba.setIcon(icon_36707d4bf3b3888347f60e0df69dbfbf);
+            
+    
+            var marker_e0b45776e3fe11f09080231d7a6fed24 = L.marker(
+                [37.7031982, 127.0468092],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_d32e2e7f42130494723e316884de6d2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d094b253046e470b1633cdad2e260e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_297c77c84ff46bacdddf6b0ee6718ec5 = $(`<div id="html_297c77c84ff46bacdddf6b0ee6718ec5" style="width: 100.0%; height: 100.0%;">락궁 (신흥대점)</div>`)[0];
+                popup_5d094b253046e470b1633cdad2e260e7.setContent(html_297c77c84ff46bacdddf6b0ee6718ec5);
+            
+        
+
+        marker_e0b45776e3fe11f09080231d7a6fed24.bindPopup(popup_5d094b253046e470b1633cdad2e260e7)
+        ;
+
+        
+    
+    
+                marker_e0b45776e3fe11f09080231d7a6fed24.setIcon(icon_d32e2e7f42130494723e316884de6d2c);
+            
+    
+            var marker_c054b7d9c00cf0cb14c37a1e768d22ac = L.marker(
+                [37.7400191, 127.0483079],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_260063692003abc4f9d9dcfbe5c0dae5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d196dee0eb52f392de8100b18ebe3b71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b02eb9edc114704f3a41e080453db1db = $(`<div id="html_b02eb9edc114704f3a41e080453db1db" style="width: 100.0%; height: 100.0%;">지동관 (의정부 시내)</div>`)[0];
+                popup_d196dee0eb52f392de8100b18ebe3b71.setContent(html_b02eb9edc114704f3a41e080453db1db);
+            
+        
+
+        marker_c054b7d9c00cf0cb14c37a1e768d22ac.bindPopup(popup_d196dee0eb52f392de8100b18ebe3b71)
+        ;
+
+        
+    
+    
+                marker_c054b7d9c00cf0cb14c37a1e768d22ac.setIcon(icon_260063692003abc4f9d9dcfbe5c0dae5);
+            
+    
+            var marker_fc2f7d6e6544b39284df92357ac9bcde = L.marker(
+                [37.739876, 127.0631521],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_93b4fd41234e5bd18bd6c3f8c2a7049c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad80f924727df1f73aeb2fcbb77ae255 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_621b06627ee114ee70baf4eb4af24f03 = $(`<div id="html_621b06627ee114ee70baf4eb4af24f03" style="width: 100.0%; height: 100.0%;">신화 짬뽕 (신곡동)</div>`)[0];
+                popup_ad80f924727df1f73aeb2fcbb77ae255.setContent(html_621b06627ee114ee70baf4eb4af24f03);
+            
+        
+
+        marker_fc2f7d6e6544b39284df92357ac9bcde.bindPopup(popup_ad80f924727df1f73aeb2fcbb77ae255)
+        ;
+
+        
+    
+    
+                marker_fc2f7d6e6544b39284df92357ac9bcde.setIcon(icon_93b4fd41234e5bd18bd6c3f8c2a7049c);
+            
+    
+            var marker_e6a479f7184543d1ed67aae0004a9570 = L.marker(
+                [37.7402151, 127.0482733],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_a75320dcf538e7ebf9b186ce491dc0bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e72207d4428348d448a7c1cbf943e663 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bab4d39f907466d7ea92358ed48f574c = $(`<div id="html_bab4d39f907466d7ea92358ed48f574c" style="width: 100.0%; height: 100.0%;">신래향 (의정부 시내)</div>`)[0];
+                popup_e72207d4428348d448a7c1cbf943e663.setContent(html_bab4d39f907466d7ea92358ed48f574c);
+            
+        
+
+        marker_e6a479f7184543d1ed67aae0004a9570.bindPopup(popup_e72207d4428348d448a7c1cbf943e663)
+        ;
+
+        
+    
+    
+                marker_e6a479f7184543d1ed67aae0004a9570.setIcon(icon_a75320dcf538e7ebf9b186ce491dc0bd);
+            
+    
+            var marker_22a63caf2c3350baa64a840c172ac0f3 = L.marker(
+                [37.7466023, 127.0949086],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_45818662030892e7c31292c4085c0741 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbf06160d88df653f29297de8623a1ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e8188f9ca7f0cf2dbd9936abc604fc0 = $(`<div id="html_5e8188f9ca7f0cf2dbd9936abc604fc0" style="width: 100.0%; height: 100.0%;">빽가화짬뽕 (민락동)</div>`)[0];
+                popup_dbf06160d88df653f29297de8623a1ea.setContent(html_5e8188f9ca7f0cf2dbd9936abc604fc0);
+            
+        
+
+        marker_22a63caf2c3350baa64a840c172ac0f3.bindPopup(popup_dbf06160d88df653f29297de8623a1ea)
+        ;
+
+        
+    
+    
+                marker_22a63caf2c3350baa64a840c172ac0f3.setIcon(icon_45818662030892e7c31292c4085c0741);
+            
+    
+            var marker_af0cd9d4fe73101cc52bed70bc047330 = L.marker(
+                [37.7329198, 127.0833113],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_f803d44f68a6cafd53c01edd214402d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a117e6043a852db93f73995c5c05958e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4419cae57acbe37020a33413355c32df = $(`<div id="html_4419cae57acbe37020a33413355c32df" style="width: 100.0%; height: 100.0%;">이비가 (만가대)</div>`)[0];
+                popup_a117e6043a852db93f73995c5c05958e.setContent(html_4419cae57acbe37020a33413355c32df);
+            
+        
+
+        marker_af0cd9d4fe73101cc52bed70bc047330.bindPopup(popup_a117e6043a852db93f73995c5c05958e)
+        ;
+
+        
+    
+    
+                marker_af0cd9d4fe73101cc52bed70bc047330.setIcon(icon_f803d44f68a6cafd53c01edd214402d6);
+            
+    
+            var marker_956b8c3fa9eecb640829779d0e75f4ad = L.marker(
+                [37.7374643, 127.0386836],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_40cd13aea11ebb2a081f6913758cfa8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_098eea2a0b22b598a41f901a18a5b286 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5edad07549a329fd983c6171c208c83 = $(`<div id="html_c5edad07549a329fd983c6171c208c83" style="width: 100.0%; height: 100.0%;">간짬뽕 (신시가지)</div>`)[0];
+                popup_098eea2a0b22b598a41f901a18a5b286.setContent(html_c5edad07549a329fd983c6171c208c83);
+            
+        
+
+        marker_956b8c3fa9eecb640829779d0e75f4ad.bindPopup(popup_098eea2a0b22b598a41f901a18a5b286)
+        ;
+
+        
+    
+    
+                marker_956b8c3fa9eecb640829779d0e75f4ad.setIcon(icon_40cd13aea11ebb2a081f6913758cfa8c);
+            
+    
+            var marker_c00ef37d936af8aa321cf4adce01445b = L.marker(
+                [37.7243295, 127.0577862],
+                {
+}
+            ).addTo(map_9dd4719f35958f112750ca9e0e3e5dca);
+        
+    
+            var icon_a31b4e220d6636eccdb6083df67604f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae74702053f4a61a7f3f714611e3dffc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9aab20ab3add5b8c790a375f6bbe993 = $(`<div id="html_f9aab20ab3add5b8c790a375f6bbe993" style="width: 100.0%; height: 100.0%;">자금성 (발곡역 부근)</div>`)[0];
+                popup_ae74702053f4a61a7f3f714611e3dffc.setContent(html_f9aab20ab3add5b8c790a375f6bbe993);
+            
+        
+
+        marker_c00ef37d936af8aa321cf4adce01445b.bindPopup(popup_ae74702053f4a61a7f3f714611e3dffc)
+        ;
+
+        
+    
+    
+                marker_c00ef37d936af8aa321cf4adce01445b.setIcon(icon_a31b4e220d6636eccdb6083df67604f3);
+            
+</script>
+</html>

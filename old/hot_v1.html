@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>당근이의 의정부 핫플</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+    .hot-title {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: min(92vw, 340px);
+      padding: 10px 14px;
+      text-align: center;
+      background: rgba(255,255,255,0.92);
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .hot-title__name {
+      display: block;
+      font-weight: 700;
+      font-size: clamp(16px, 4.2vw, 22px);
+    }
+    .hot-title__visit {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: #444;
+    }
+    .hot-search {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .hot-search input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 14px;
+      outline: none;
+    }
+    .hot-search input:focus { border-color: #e67e00; }
+    .hot-search button {
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      background: #e67e00;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .hot-search__msg {
+      margin-top: 6px;
+      min-height: 16px;
+      font-size: 12px;
+      color: #666;
+    }
+    .hot-search__msg.is-error { color: #c0392b; }
+    .hot-search__msg.is-ok { color: #2d7a32; }
+    .hot-popup { text-align: center; min-width: 140px; }
+    .hot-popup a {
+      color: #e67e00;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    #loading {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: sans-serif;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(1.18); }
+    }
+    .blink-marker {
+      animation: blink 0.7s ease-in-out 4;
+    }
+  </style>
+</head>
+<body>
+  <div class="hot-title">
+    <span class="hot-title__name">당근이의 의정부 핫플</span>
+    <span class="hot-title__visit">
+      방문자 수: <span id="visit-count">로딩중...</span>
+    </span>
+    <div class="hot-search">
+      <input id="search-input" type="search" placeholder="예: 신화 짬뽕" autocomplete="off" />
+      <button id="search-btn" type="button">검색</button>
+    </div>
+    <div id="search-msg" class="hot-search__msg"></div>
+  </div>
+  <div id="loading">장소 불러오는 중...</div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const ICON_DIR = "/rsc/icons/pack_2";
+    const iconFiles = {
+      "볼 거리": "01_see.png",
+      "알아갈 거리": "02_learn.png",
+      "마실 거리": "03_drink.png",
+      "먹을 거리": "04_eat.png",
+      "즐길 거리": "05_play.png",
+      "쉴 거리": "06_rest.png",
+      "숙소": "07_stay.png",
+      "교통": "08_move.png",
+      "기타": "09_other.png",
+    };
+
+    let map = null;
+    let groups = {};
+    const placeIndex = []; // { name, address, category, lat, lon, marker, group }
+    let blinkTimer = null;
+
+    function makeIcon(category) {
+      const file = iconFiles[category] || iconFiles["기타"];
+      return L.icon({
+        iconUrl: ICON_DIR + "/" + file,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+        popupAnchor: [0, -12],
+      });
+    }
+
+    function setSearchMsg(text, kind) {
+      const el = document.getElementById("search-msg");
+      el.textContent = text || "";
+      el.className = "hot-search__msg" + (kind ? " is-" + kind : "");
+    }
+
+    function normalize(s) {
+      return String(s || "")
+        .toLowerCase()
+        .replace(/\s+/g, "")
+        .trim();
+    }
+
+    function findPlaces(query) {
+      const q = normalize(query);
+      if (!q) return [];
+
+      // 1) 이름 완전 일치 우선
+      const exact = placeIndex.filter(function (p) {
+        return normalize(p.name) === q;
+      });
+      if (exact.length) return exact;
+
+      // 2) 이름 포함
+      const byName = placeIndex.filter(function (p) {
+        return normalize(p.name).indexOf(q) !== -1;
+      });
+      if (byName.length) return byName;
+
+      // 3) 주소 포함
+      return placeIndex.filter(function (p) {
+        return normalize(p.address).indexOf(q) !== -1;
+      });
+    }
+
+    function blinkMarker(marker) {
+      const el = marker.getElement && marker.getElement();
+      if (!el) return;
+      el.classList.remove("blink-marker");
+      // reflow to restart animation
+      void el.offsetWidth;
+      el.classList.add("blink-marker");
+      if (blinkTimer) clearTimeout(blinkTimer);
+      blinkTimer = setTimeout(function () {
+        el.classList.remove("blink-marker");
+      }, 3000);
+    }
+
+    function goToPlace(item) {
+      // 카테고리 레이어가 꺼져 있으면 켜기
+      if (item.group && map && !map.hasLayer(item.group)) {
+        map.addLayer(item.group);
+      }
+
+      map.flyTo([item.lat, item.lon], 17, { duration: 0.85 });
+
+      setTimeout(function () {
+        item.marker.openPopup();
+        blinkMarker(item.marker);
+      }, 900);
+    }
+
+    function searchPlace(query) {
+      const q = String(query || "").trim();
+      if (!q) {
+        setSearchMsg("검색어를 입력하세요.", "error");
+        return;
+      }
+      if (!map || !placeIndex.length) {
+        setSearchMsg("아직 장소 데이터가 없습니다.", "error");
+        return;
+      }
+
+      const found = findPlaces(q);
+      if (!found.length) {
+        setSearchMsg(" + q +  을(를) 찾지 못했어요.", "error");
+        return;
+      }
+
+      // 여러 개면 첫 결과로 이동 + 개수 안내
+      const first = found[0];
+      if (found.length === 1) {
+        setSearchMsg(first.name + " 으로 이동", "ok");
+      } else {
+        setSearchMsg(
+          found.length + "곳 중 첫 결과: " + first.name,
+          "ok"
+        );
+      }
+      goToPlace(first);
+    }
+
+    function bindSearch() {
+      const input = document.getElementById("search-input");
+      const btn = document.getElementById("search-btn");
+      btn.addEventListener("click", function () {
+        searchPlace(input.value);
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          searchPlace(input.value);
+        }
+      });
+    }
+
+    async function main() {
+      bindSearch();
+
+      fetch("/count.txt?" + Math.random())
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+          document.getElementById("visit-count").innerText = t.trim();
+        })
+        .catch(function () {
+          document.getElementById("visit-count").innerText = "-";
+        });
+
+      const res = await fetch("/api/places");
+      if (!res.ok) throw new Error("API 실패: " + res.status);
+      const data = await res.json();
+
+      map = L.map("map").setView(
+        [data.map.lat, data.map.lon],
+        data.map.zoom
+      );
+
+      const cartoLight = "https://" + "{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+      const cartoDark = "https://" + "{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+      const osm = "https://" + "{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+      const baseMaps = {
+        "밝은 지도": L.tileLayer(cartoLight, {
+          attribution: "&copy; OpenStreetMap, CARTO",
+          maxZoom: 20,
+        }),
+        "어두운 지도": L.tileLayer(cartoDark, {
+          attribution: "&copy; OpenStreetMap, CARTO",
+          maxZoom: 20,
+        }),
+        "기본 지도": L.tileLayer(osm, {
+          attribution: "&copy; OpenStreetMap",
+          maxZoom: 19,
+        }),
+      };
+      baseMaps["밝은 지도"].addTo(map);
+
+      groups = {};
+      const overlays = {};
+      Object.keys(data.categoryVisible || {}).forEach(function (name) {
+        groups[name] = L.layerGroup();
+        overlays[name] = groups[name];
+        if (data.categoryVisible[name]) {
+          groups[name].addTo(map);
+        }
+      });
+
+      // 의정부 경계선 (있으면 표시)
+      try {
+        const bRes = await fetch("/api/boundary");
+        if (bRes.ok) {
+          const geo = await bRes.json();
+          const boundary = L.geoJSON(geo, {
+            style: {
+              fillColor: "#3388ff",
+              color: "#222",
+              weight: 2,
+              fillOpacity: 0.08,
+            },
+          });
+          boundary.addTo(map);
+          overlays["의정부 경계선"] = boundary;
+        }
+      } catch (e) {
+        // boundary API 없으면 조용히 스킵
+      }
+
+      (data.places || []).forEach(function (p) {
+        const group = groups[p.category] || groups["기타"];
+        if (!group) return;
+
+        const marker = L.marker([p.lat, p.lon], {
+          icon: makeIcon(p.category),
+          title: p.name,
+        });
+        marker.bindPopup(
+          '<div class="hot-popup">' +
+            "<b>" + p.name + "</b><br/>" +
+            "분류: " + p.category + "<br/>" +
+            '<a href="' + p.url + '" target="_blank" rel="noopener">📍 노션에서 확인</a>' +
+          "</div>"
+        );
+        marker.addTo(group);
+
+        placeIndex.push({
+          name: p.name,
+          address: p.address || "",
+          category: p.category,
+          lat: p.lat,
+          lon: p.lon,
+          marker: marker,
+          group: group,
+        });
+      });
+
+      L.control.layers(baseMaps, overlays, { collapsed: true }).addTo(map);
+
+      const loading = document.getElementById("loading");
+      loading.innerText = "장소 " + (data.count || 0) + "개 로드 완료";
+      setTimeout(function () { loading.style.display = "none"; }, 1200);
+    }
+
+    main().catch(function (err) {
+      console.error(err);
+      document.getElementById("loading").innerText = "불러오기 실패";
+      alert("장소 데이터를 불러오지 못했습니다.");
+    });
+  </script>
+</body>
+</html>

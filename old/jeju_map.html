@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_82d2ba4ceee0da5a4bf96d0ab356b91a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_82d2ba4ceee0da5a4bf96d0ab356b91a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_82d2ba4ceee0da5a4bf96d0ab356b91a = L.map(
+                "map_82d2ba4ceee0da5a4bf96d0ab356b91a",
+                {
+                    center: [33.417046666666664, 126.59630666666668],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_43e4aaf8a8bb296baae58287dc401be4 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_43e4aaf8a8bb296baae58287dc401be4.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var tile_layer_bae1d541d52d1e5e6e637edbceda9a5b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var feature_group_22f5331dc5675ed3b2ac8796060b0860 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_51509444b02bbac1654be9d79f5f4c6b = L.marker(
+                [33.4635, 126.32],
+                {
+}
+            ).addTo(feature_group_22f5331dc5675ed3b2ac8796060b0860);
+        
+    
+            var icon_3b52bfe6a3a292778607d46d1447f2db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61b22f1851186677034ab184083b6599 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b30260cf80e635eaa9c0fd67a8f2282f = $(`<div id="html_b30260cf80e635eaa9c0fd67a8f2282f" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Noeul (sample)</b><br/>           <span>No: 9</span><br/>           <span>Category: Drink</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Cafe, Ocean view</span><br/>           <span>Address: 654 Aewolhaean-ro, Aewol-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample ocean-view cafe for a break</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Noeul-sample-b0df99a4bb238260a9888144e821ea58" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_61b22f1851186677034ab184083b6599.setContent(html_b30260cf80e635eaa9c0fd67a8f2282f);
+            
+        
+
+        marker_51509444b02bbac1654be9d79f5f4c6b.bindPopup(popup_61b22f1851186677034ab184083b6599)
+        ;
+
+        
+    
+    
+            marker_51509444b02bbac1654be9d79f5f4c6b.bindTooltip(
+                `<div>
+                     Noeul (sample) (Drink)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_51509444b02bbac1654be9d79f5f4c6b.setIcon(icon_3b52bfe6a3a292778607d46d1447f2db);
+            
+    
+            var marker_a717cdbf518ec280aac256e569a49d0e = L.marker(
+                [33.363, 126.841],
+                {
+}
+            ).addTo(feature_group_22f5331dc5675ed3b2ac8796060b0860);
+        
+    
+            var icon_6205d5d9c71475837850e8f37a4e237b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c51153eefb64337cab09e12f91109310 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dc15f8a16242e475c693581a811b97d6 = $(`<div id="html_dc15f8a16242e475c693581a811b97d6" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Azulejo (sample)</b><br/>           <span>No: 8</span><br/>           <span>Category: Drink</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐⭐</span><br/>           <span>Tags: Cafe, Bakery</span><br/>           <span>Address: 59 Sinpunghadong-ro 19beon-gil, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample bakery cafe for bread and coffee</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Azulejo-sample-c11f99a4bb238246a4d50125b2bc1f60" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_c51153eefb64337cab09e12f91109310.setContent(html_dc15f8a16242e475c693581a811b97d6);
+            
+        
+
+        marker_a717cdbf518ec280aac256e569a49d0e.bindPopup(popup_c51153eefb64337cab09e12f91109310)
+        ;
+
+        
+    
+    
+            marker_a717cdbf518ec280aac256e569a49d0e.bindTooltip(
+                `<div>
+                     Azulejo (sample) (Drink)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a717cdbf518ec280aac256e569a49d0e.setIcon(icon_6205d5d9c71475837850e8f37a4e237b);
+            
+    
+            var marker_feb8f37691c0c0085a7a6e10f4fdc993 = L.marker(
+                [33.556, 126.7955],
+                {
+}
+            ).addTo(feature_group_22f5331dc5675ed3b2ac8796060b0860);
+        
+    
+            var icon_7b6feedf58e05c67f775bdfe61aa4845 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3491a1033bbae1d93856f97a51a714ba = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_250104233405dde1a949ad3da2d53b4b = $(`<div id="html_250104233405dde1a949ad3da2d53b4b" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Cafe Guhalgu (sample)</b><br/>           <span>No: 7</span><br/>           <span>Category: Drink</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐⭐</span><br/>           <span>Tags: Cafe, Dessert</span><br/>           <span>Address: 48-2 Woljeong 5-gil, Gujwa-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample Jeju-style dessert cafe</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Cafe-Guhalgu-sample-0edf99a4bb2382cf83fb81970fe11b21" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_3491a1033bbae1d93856f97a51a714ba.setContent(html_250104233405dde1a949ad3da2d53b4b);
+            
+        
+
+        marker_feb8f37691c0c0085a7a6e10f4fdc993.bindPopup(popup_3491a1033bbae1d93856f97a51a714ba)
+        ;
+
+        
+    
+    
+            marker_feb8f37691c0c0085a7a6e10f4fdc993.bindTooltip(
+                `<div>
+                     Cafe Guhalgu (sample) (Drink)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_feb8f37691c0c0085a7a6e10f4fdc993.setIcon(icon_7b6feedf58e05c67f775bdfe61aa4845);
+            
+    
+            feature_group_22f5331dc5675ed3b2ac8796060b0860.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var feature_group_8da660f6a76ab7a6b8fc43f09f461f88 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6d2bd1aad41e6d99ea9f904450b00a6e = L.marker(
+                [33.229, 126.304],
+                {
+}
+            ).addTo(feature_group_8da660f6a76ab7a6b8fc43f09f461f88);
+        
+    
+            var icon_dbbcfc7d46fdc6b0152e377811cf8640 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81cf83458ef8cc31bd055c844b779b26 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_57a053e1a318f8111f3715e8c7ffc90f = $(`<div id="html_57a053e1a318f8111f3715e8c7ffc90f" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Gohalmangne (sample)</b><br/>           <span>No: 6</span><br/>           <span>Category: Eat</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Korean food, Noodles</span><br/>           <span>Address: 159-1 Sagyenam-ro, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample one-meal stop on a Jeju trip</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Gohalmangne-sample-ea4f99a4bb238219a00801130f8358e2" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_81cf83458ef8cc31bd055c844b779b26.setContent(html_57a053e1a318f8111f3715e8c7ffc90f);
+            
+        
+
+        marker_6d2bd1aad41e6d99ea9f904450b00a6e.bindPopup(popup_81cf83458ef8cc31bd055c844b779b26)
+        ;
+
+        
+    
+    
+            marker_6d2bd1aad41e6d99ea9f904450b00a6e.bindTooltip(
+                `<div>
+                     Gohalmangne (sample) (Eat)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d2bd1aad41e6d99ea9f904450b00a6e.setIcon(icon_dbbcfc7d46fdc6b0152e377811cf8640);
+            
+    
+            var marker_d9d198c5eae865434cb7905e89a8cc2b = L.marker(
+                [33.2405, 126.335],
+                {
+}
+            ).addTo(feature_group_8da660f6a76ab7a6b8fc43f09f461f88);
+        
+    
+            var icon_a6754f26bd8ec919de7730c91746873a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72147f59a194b5f49efd9fb5598e7f5b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8698e196f2ec76b2ba0fda9985accb38 = $(`<div id="html_8698e196f2ec76b2ba0fda9985accb38" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Myeonggyeong Restaurant (sample)</b><br/>           <span>No: 5</span><br/>           <span>Category: Eat</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Korean food, Meat</span><br/>           <span>Address: 88 Hwasun-ro, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample dinner spot for a signature local meal</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Myeonggyeong-Restaurant-sample-f0bf99a4bb238344892d818ec0f5301f" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_72147f59a194b5f49efd9fb5598e7f5b.setContent(html_8698e196f2ec76b2ba0fda9985accb38);
+            
+        
+
+        marker_d9d198c5eae865434cb7905e89a8cc2b.bindPopup(popup_72147f59a194b5f49efd9fb5598e7f5b)
+        ;
+
+        
+    
+    
+            marker_d9d198c5eae865434cb7905e89a8cc2b.bindTooltip(
+                `<div>
+                     Myeonggyeong Restaurant (sample) (Eat)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d9d198c5eae865434cb7905e89a8cc2b.setIcon(icon_a6754f26bd8ec919de7730c91746873a);
+            
+    
+            var marker_a7256a210b527390417394f939542f9a = L.marker(
+                [33.512, 126.518],
+                {
+}
+            ).addTo(feature_group_8da660f6a76ab7a6b8fc43f09f461f88);
+        
+    
+            var icon_fe373a9f7b735b5ecdbc519b846a9962 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b085bbcb515c2898826bb1b1ea0e3c14 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bf6b66f83deb4ec889a0fa74ea96013f = $(`<div id="html_bf6b66f83deb4ec889a0fa74ea96013f" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Haksik Restaurant (sample)</b><br/>           <span>No: 4</span><br/>           <span>Category: Eat</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Seafood, Korean food</span><br/>           <span>Address: 3 Seomun-ro 6-gil, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample seaside restaurant</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Haksik-Restaurant-sample-7baf99a4bb238291b12d81f8ed80ba6b" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_b085bbcb515c2898826bb1b1ea0e3c14.setContent(html_bf6b66f83deb4ec889a0fa74ea96013f);
+            
+        
+
+        marker_a7256a210b527390417394f939542f9a.bindPopup(popup_b085bbcb515c2898826bb1b1ea0e3c14)
+        ;
+
+        
+    
+    
+            marker_a7256a210b527390417394f939542f9a.bindTooltip(
+                `<div>
+                     Haksik Restaurant (sample) (Eat)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a7256a210b527390417394f939542f9a.setIcon(icon_fe373a9f7b735b5ecdbc519b846a9962);
+            
+    
+            feature_group_8da660f6a76ab7a6b8fc43f09f461f88.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var feature_group_6556666c30d3c617caaa73c8f019de38 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_0f8ca2e60cfb36295c3efcd3742ce657 = L.marker(
+                [33.3865, 126.6265],
+                {
+}
+            ).addTo(feature_group_6556666c30d3c617caaa73c8f019de38);
+        
+    
+            var icon_5e0d4e38d3f599937e050c58aec1f8ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1d69a2964f006564afe510d8880bb9e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4a29d79b3d22319693a5c605a2757837 = $(`<div id="html_4a29d79b3d22319693a5c605a2757837" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Saryeoni Forest Path</b><br/>           <span>No: 12</span><br/>           <span>Category: Rest</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐</span><br/>           <span>Tags: Walk, Forest trail</span><br/>           <span>Address: San 137-1 Gyorae-ri, Jocheon-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample quiet walking trail</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Saryeoni-Forest-Path-8eff99a4bb2382e9933781ea95d716cc" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_f1d69a2964f006564afe510d8880bb9e.setContent(html_4a29d79b3d22319693a5c605a2757837);
+            
+        
+
+        marker_0f8ca2e60cfb36295c3efcd3742ce657.bindPopup(popup_f1d69a2964f006564afe510d8880bb9e)
+        ;
+
+        
+    
+    
+            marker_0f8ca2e60cfb36295c3efcd3742ce657.bindTooltip(
+                `<div>
+                     Saryeoni Forest Path (Rest)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f8ca2e60cfb36295c3efcd3742ce657.setIcon(icon_5e0d4e38d3f599937e050c58aec1f8ae);
+            
+    
+            var marker_d69fcea244486fe044ff8ae057edfa86 = L.marker(
+                [33.4905, 126.8097],
+                {
+}
+            ).addTo(feature_group_6556666c30d3c617caaa73c8f019de38);
+        
+    
+            var icon_782f9d4782a97e3475fbd2e6256e5d73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9919a4d3f651de9c468ef5e2fc487d0d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ae00720b93e51248def73c88418209e2 = $(`<div id="html_ae00720b93e51248def73c88418209e2" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Bijarim Forest</b><br/>           <span>No: 11</span><br/>           <span>Category: Rest</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐⭐</span><br/>           <span>Tags: Walk, Forest</span><br/>           <span>Address: 55 Bijasup-gil, Gujwa-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample forest rest stop</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Bijarim-Forest-77af99a4bb2382cca96881bb4a18f003" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_9919a4d3f651de9c468ef5e2fc487d0d.setContent(html_ae00720b93e51248def73c88418209e2);
+            
+        
+
+        marker_d69fcea244486fe044ff8ae057edfa86.bindPopup(popup_9919a4d3f651de9c468ef5e2fc487d0d)
+        ;
+
+        
+    
+    
+            marker_d69fcea244486fe044ff8ae057edfa86.bindTooltip(
+                `<div>
+                     Bijarim Forest (Rest)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d69fcea244486fe044ff8ae057edfa86.setIcon(icon_782f9d4782a97e3475fbd2e6256e5d73);
+            
+    
+            var marker_e9b9d1c28ba357fb950233acdb1d9e3a = L.marker(
+                [33.4608, 126.3106],
+                {
+}
+            ).addTo(feature_group_6556666c30d3c617caaa73c8f019de38);
+        
+    
+            var icon_fcc954eac79a6f07a1a6c774f1bcf256 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65c786bd4a2cc4920fa73fb5667c95ce = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9885866cf1f233b06cfee7211e59b0d3 = $(`<div id="html_9885866cf1f233b06cfee7211e59b0d3" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Handam Coastal Trail</b><br/>           <span>No: 10</span><br/>           <span>Category: Rest</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Walk, Ocean</span><br/>           <span>Address: 1359 Gwakji-ri, Aewol-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample coastal walking course</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Handam-Coastal-Trail-c4ef99a4bb2383bea040813f86069396" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_65c786bd4a2cc4920fa73fb5667c95ce.setContent(html_9885866cf1f233b06cfee7211e59b0d3);
+            
+        
+
+        marker_e9b9d1c28ba357fb950233acdb1d9e3a.bindPopup(popup_65c786bd4a2cc4920fa73fb5667c95ce)
+        ;
+
+        
+    
+    
+            marker_e9b9d1c28ba357fb950233acdb1d9e3a.bindTooltip(
+                `<div>
+                     Handam Coastal Trail (Rest)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9b9d1c28ba357fb950233acdb1d9e3a.setIcon(icon_fcc954eac79a6f07a1a6c774f1bcf256);
+            
+    
+            feature_group_6556666c30d3c617caaa73c8f019de38.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var feature_group_a1c9a673401b5343679c607a158ed67f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_aeab3efa08b734ef3d80236373fba4b9 = L.marker(
+                [33.2467, 126.5544],
+                {
+}
+            ).addTo(feature_group_a1c9a673401b5343679c607a158ed67f);
+        
+    
+            var icon_df140b366c2040079de5ab3dfb4db1d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15512bc0f621476efa8718ca6837a399 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b3443d8eca066d3bba19f1832235a62e = $(`<div id="html_b3443d8eca066d3bba19f1832235a62e" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Cheonjiyeon Falls</b><br/>           <span>No: 3</span><br/>           <span>Category: See</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐⭐</span><br/>           <span>Tags: Nature, Waterfall</span><br/>           <span>Address: 2565 Seohong-dong, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample waterfall / nature attraction</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Cheonjiyeon-Falls-ccdf99a4bb2383249a7e81b8833938e9" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_15512bc0f621476efa8718ca6837a399.setContent(html_b3443d8eca066d3bba19f1832235a62e);
+            
+        
+
+        marker_aeab3efa08b734ef3d80236373fba4b9.bindPopup(popup_15512bc0f621476efa8718ca6837a399)
+        ;
+
+        
+    
+    
+            marker_aeab3efa08b734ef3d80236373fba4b9.bindTooltip(
+                `<div>
+                     Cheonjiyeon Falls (See)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aeab3efa08b734ef3d80236373fba4b9.setIcon(icon_df140b366c2040079de5ab3dfb4db1d0);
+            
+    
+            var marker_1118a46cb42f458dfb7cf5ac3f11514b = L.marker(
+                [33.5434, 126.6694],
+                {
+}
+            ).addTo(feature_group_a1c9a673401b5343679c607a158ed67f);
+        
+    
+            var icon_78a244da6f1bea61a754daa455dd9f92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ae02abf9d473ca5ccb4c2ce503fb65d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_85126fe8bbf15781e4e8fcd5541d745b = $(`<div id="html_85126fe8bbf15781e4e8fcd5541d745b" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Hamdeok Beach</b><br/>           <span>No: 2</span><br/>           <span>Category: See</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐⭐⭐</span><br/>           <span>Tags: Beach, Photo</span><br/>           <span>Address: 525 Johamhaean-ro, Jocheon-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample beach scenery spot</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Hamdeok-Beach-fa0f99a4bb2383eb929a01c58dc12693" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_4ae02abf9d473ca5ccb4c2ce503fb65d.setContent(html_85126fe8bbf15781e4e8fcd5541d745b);
+            
+        
+
+        marker_1118a46cb42f458dfb7cf5ac3f11514b.bindPopup(popup_4ae02abf9d473ca5ccb4c2ce503fb65d)
+        ;
+
+        
+    
+    
+            marker_1118a46cb42f458dfb7cf5ac3f11514b.bindTooltip(
+                `<div>
+                     Hamdeok Beach (See)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1118a46cb42f458dfb7cf5ac3f11514b.setIcon(icon_78a244da6f1bea61a754daa455dd9f92);
+            
+    
+            var marker_86cb7b18cecd025ae552c243dad7827d = L.marker(
+                [33.4581, 126.9425],
+                {
+}
+            ).addTo(feature_group_a1c9a673401b5343679c607a158ed67f);
+        
+    
+            var icon_55857d3793231e5b778ae18ae56bafef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f6729d96b1ca1ce538d56c92b5915cf9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_38e40e3b215194a6e20a42c7a95b02f8 = $(`<div id="html_38e40e3b215194a6e20a42c7a95b02f8" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Seongsan Ilchulbong</b><br/>           <span>No: 1</span><br/>           <span>Category: See</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐⭐</span><br/>           <span>Tags: Nature, Viewpoint</span><br/>           <span>Address: 1 Seongsan-ri, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Iconic Jeju sunrise viewpoint</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Seongsan-Ilchulbong-78af99a4bb23823c98d1815c2d54a7db" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_f6729d96b1ca1ce538d56c92b5915cf9.setContent(html_38e40e3b215194a6e20a42c7a95b02f8);
+            
+        
+
+        marker_86cb7b18cecd025ae552c243dad7827d.bindPopup(popup_f6729d96b1ca1ce538d56c92b5915cf9)
+        ;
+
+        
+    
+    
+            marker_86cb7b18cecd025ae552c243dad7827d.bindTooltip(
+                `<div>
+                     Seongsan Ilchulbong (See)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86cb7b18cecd025ae552c243dad7827d.setIcon(icon_55857d3793231e5b778ae18ae56bafef);
+            
+    
+            feature_group_a1c9a673401b5343679c607a158ed67f.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_ef40d9fff050127679ad71c6645cae39 = L.marker(
+                [33.542, 126.6675],
+                {
+}
+            ).addTo(feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba);
+        
+    
+            var icon_c6875c15d9cb1d118342496ab48c8f32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb4d3a8f3f52cc3826920b989135ceb4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b43690d08e677da467f6918f00d16410 = $(`<div id="html_b43690d08e677da467f6918f00d16410" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>✅ Hamdeok Beach Stay Jeju (sample)</b><br/>           <span>No: 15</span><br/>           <span>Category: Stay</span><br/>           <span>Status: Visited</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Hotel, Ocean view</span><br/>           <span>Address: 474 Johamhaean-ro, Jocheon-eup, Jeju-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample ocean-view accommodation</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Hamdeok-Beach-Stay-Jeju-sample-747f99a4bb2383a08daf010c5e6c68ee" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_cb4d3a8f3f52cc3826920b989135ceb4.setContent(html_b43690d08e677da467f6918f00d16410);
+            
+        
+
+        marker_ef40d9fff050127679ad71c6645cae39.bindPopup(popup_cb4d3a8f3f52cc3826920b989135ceb4)
+        ;
+
+        
+    
+    
+            marker_ef40d9fff050127679ad71c6645cae39.bindTooltip(
+                `<div>
+                     Hamdeok Beach Stay Jeju (sample) (Stay)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef40d9fff050127679ad71c6645cae39.setIcon(icon_c6875c15d9cb1d118342496ab48c8f32);
+            
+    
+            var marker_bdb811294e013eabd39268ee49b9c85f = L.marker(
+                [33.459, 126.934],
+                {
+}
+            ).addTo(feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba);
+        
+    
+            var icon_47e926f4f88a2f4b1106cd47af39a190 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37bc9709fb665e031c6bcc0cfb415098 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7cf64c0dad3a1a95d115ef35856a2d93 = $(`<div id="html_7cf64c0dad3a1a95d115ef35856a2d93" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 The Four Grace Hotel & Resort (sample)</b><br/>           <span>No: 14</span><br/>           <span>Category: Stay</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Guesthouse, Budget-friendly</span><br/>           <span>Address: 2670 Haematiihaean-ro, Seongsan-eup, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample solo / budget-friendly stay</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/The-Four-Grace-Hotel-Resort-sample-9c2f99a4bb23832ba29681becd79e9c1" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_37bc9709fb665e031c6bcc0cfb415098.setContent(html_7cf64c0dad3a1a95d115ef35856a2d93);
+            
+        
+
+        marker_bdb811294e013eabd39268ee49b9c85f.bindPopup(popup_37bc9709fb665e031c6bcc0cfb415098)
+        ;
+
+        
+    
+    
+            marker_bdb811294e013eabd39268ee49b9c85f.bindTooltip(
+                `<div>
+                     The Four Grace Hotel & Resort (sample) (Stay)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bdb811294e013eabd39268ee49b9c85f.setIcon(icon_47e926f4f88a2f4b1106cd47af39a190);
+            
+    
+            var marker_a9ee3c4082e9f6a05dce75677bdc2544 = L.marker(
+                [33.3047, 126.3165],
+                {
+}
+            ).addTo(feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba);
+        
+    
+            var icon_bc2cc28849c04723af4cd2cd46ac687b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef9a16e2140b153bc5ecee4409263a0a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d12ba8674af235e9edf7ce24638ec11f = $(`<div id="html_d12ba8674af235e9edf7ce24638ec11f" style="width: 100.0%; height: 100.0%;">         <div style="min-width:220px;font-family:sans-serif;font-size:13px;">           <b>📌 Jeju Shinhwa World Marriott (sample)</b><br/>           <span>No: 13</span><br/>           <span>Category: Stay</span><br/>           <span>Status: Wishlist</span><br/>           <span>Rating: ⭐⭐⭐</span><br/>           <span>Tags: Hotel, Family trip</span><br/>           <span>Address: 38 Sinhwayeoksa-ro 304beon-gil, Andeok-myeon, Seogwipo-si, Jeju-do, South Korea</span><br/>           <span>Memo: Sample stay for family or couple trips</span><br/>           <span style="color:#888">coords via place</span><br/>           <a href="https://app.notion.com/p/Jeju-Shinhwa-World-Marriott-sample-497f99a4bb2383328b7781625d4caf62" target="_blank">Open in Notion</a>         </div>         </div>`)[0];
+                popup_ef9a16e2140b153bc5ecee4409263a0a.setContent(html_d12ba8674af235e9edf7ce24638ec11f);
+            
+        
+
+        marker_a9ee3c4082e9f6a05dce75677bdc2544.bindPopup(popup_ef9a16e2140b153bc5ecee4409263a0a)
+        ;
+
+        
+    
+    
+            marker_a9ee3c4082e9f6a05dce75677bdc2544.bindTooltip(
+                `<div>
+                     Jeju Shinhwa World Marriott (sample) (Stay)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9ee3c4082e9f6a05dce75677bdc2544.setIcon(icon_bc2cc28849c04723af4cd2cd46ac687b);
+            
+    
+            feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba.addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+        
+    
+            var layer_control_356b9bf1143fd00547695db94de08f24_layers = {
+                base_layers : {
+                    "English basemap" : tile_layer_43e4aaf8a8bb296baae58287dc401be4,
+                    "Korean basemap" : tile_layer_bae1d541d52d1e5e6e637edbceda9a5b,
+                },
+                overlays :  {
+                    "Drink (3)" : feature_group_22f5331dc5675ed3b2ac8796060b0860,
+                    "Eat (3)" : feature_group_8da660f6a76ab7a6b8fc43f09f461f88,
+                    "Rest (3)" : feature_group_6556666c30d3c617caaa73c8f019de38,
+                    "See (3)" : feature_group_a1c9a673401b5343679c607a158ed67f,
+                    "Stay (3)" : feature_group_29bf8a19fe486f2ed87fb891dbe5d4ba,
+                },
+            };
+            let layer_control_356b9bf1143fd00547695db94de08f24 = L.control.layers(
+                layer_control_356b9bf1143fd00547695db94de08f24_layers.base_layers,
+                layer_control_356b9bf1143fd00547695db94de08f24_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_82d2ba4ceee0da5a4bf96d0ab356b91a);
+
+        
+</script>
+</html>
