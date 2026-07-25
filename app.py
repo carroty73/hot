@@ -1,17 +1,10 @@
-
-
 # ===== 설정 =====
-#KAKAO_API_KEY = "xxx" #이렇게 코드 상에 직접 넣는 방식은 보안상 좋지 않음. 환경변수로 관리하는 것이 안전함.
-#NOTION_TOKEN = "yyy"
-#NOTION_DB_ID = "zzz"
-
-
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-NOTION_TOKEN= os.environ.get("NOTION_TOKEN")
-NOTION_DB_ID= os.environ.get("NOTION_DB_ID")
+NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
+NOTION_DB_ID = os.environ.get("NOTION_DB_ID")
 KAKAO_API_KEY = os.environ.get("KAKAO_API_KEY")
 
 print("NOTION_TOKEN:", NOTION_TOKEN)
@@ -27,7 +20,6 @@ from flask import (
     jsonify,
     abort,
 )
-import os
 import re
 import requests
 from urllib.parse import unquote
@@ -64,7 +56,6 @@ NOTION_HEADERS = {
 def fetch_all_pages(db_id):
     url = "https://" + "api.notion.com/v1/databases/" + db_id + "/query"
     results = []
-    #payload = {"page_size": 100}
     payload = {
         "page_size": 100,
         "filter": {
@@ -101,6 +92,26 @@ def get_kakao_coords(address):
     except Exception as e:
         print(f"카카오 오류: {e}")
         return None, None
+
+
+# 노션 위도 경도 업데이트 함수 (api_places보다 위로 이동)
+def update_notion_lat_lon(page_id, lat, lon):
+    """노션 페이지의 '위도', '경도' 속성 값을 업데이트합니다."""
+    url = f"https://api.notion.com/v1/pages/{page_id}"
+    payload = {
+        "properties": {
+            "위도": {"number": lat},
+            "경도": {"number": lon}
+        }
+    }
+    try:
+        response = requests.patch(url, headers=NOTION_HEADERS, json=payload, timeout=10)
+        if response.status_code == 200:
+            print(f"노션 위경도 캐싱 성공 (Page ID: {page_id}): ({lat}, {lon})")
+        else:
+            print(f"노션 위경도 캐싱 실패: {response.text}")
+    except Exception as e:
+        print(f"노션 위경도 업데이트 오류: {e}")
 
 
 def plain_title(prop):
@@ -153,10 +164,16 @@ def api_places():
 
         category = select_name(props.get("카테고리"), "기타")
 
+        # 1. 노션 DB에 이미 위도, 경도가 기록되어 있는지 확인
         lat = number_or_none(props.get("위도"))
         lon = number_or_none(props.get("경도"))
+
+        # 2. 위도나 경도가 없다면 카카오 지오코딩 실행 후 노션에 저장
         if lat is None or lon is None:
             lat, lon = get_kakao_coords(address)
+            if lat is not None and lon is not None:
+                page_id = page.get("id")
+                update_notion_lat_lon(page_id, lat, lon)
 
         if not lat or not lon:
             print(f"좌표 실패: {name} / {address}")
@@ -205,9 +222,6 @@ def get_count():
 
 # ============================================================
 # 여러 지역 바운더리 지원
-# 폴더: ./boundaries/
-# 파일 예: 의정부 바운더리.txt, 서울_바운더리.txt
-# 내용: GeoJSON
 # ============================================================
 BOUNDARIES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "boundaries")
 BOUNDARY_EXTS = {".txt", ".geojson", ".json"}
@@ -217,7 +231,6 @@ LEGACY_BOUNDARY_FILES = [
 
 
 def _boundary_display_name(filename: str) -> str:
-    """'의정부 바운더리.txt' → '의정부 경계'"""
     name = filename
     name = re.sub(r"\.(txt|geojson|json)$", "", name, flags=re.I)
     name = re.sub(r"[ _]*바운더리리?", "", name)
