@@ -4,3 +4,6 @@ streamlit
 streamlit-folium
 requests
 python-dotenv
+flask
+requests
+python-dotenv
