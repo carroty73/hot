@@ -7,10 +7,6 @@ NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
 NOTION_DB_ID = os.environ.get("NOTION_DB_ID")
 KAKAO_API_KEY = os.environ.get("KAKAO_API_KEY")
 
-print("NOTION_TOKEN:", NOTION_TOKEN)
-print("NOTION_DB_ID:", NOTION_DB_ID)
-print("KAKAO_API_KEY:", KAKAO_API_KEY)  
-
 from flask import (
     Flask,
     send_file,

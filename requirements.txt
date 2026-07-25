@@ -1,9 +1,4 @@
-notion-client
-folium
-streamlit
-streamlit-folium
-requests
-python-dotenv
 flask
 requests
 python-dotenv
+gunicorn
